@@ -24,7 +24,7 @@ if __name__ == "__main__":
     for i in range(n):
         a.append([i, None])
 
-    def already_exits(y):
+    def already_exists(y):
         """check that a queen does not already exist in that y value"""
         for x in range(n):
             if y == a[x][1]:
