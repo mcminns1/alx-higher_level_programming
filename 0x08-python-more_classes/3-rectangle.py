@@ -7,7 +7,7 @@ Defines a class Rectangle
 class Rectangle:
     """Representation of a rectangle"""
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """Initialize the rectangle"""
         self.width = width
         self.height = height
 
@@ -17,7 +17,7 @@ class Rectangle:
         return self.__width
 
     @width.setter
-    def widht(self, value):
+    def width(self, value):
         """setter for the private instance attribute width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -36,7 +36,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height must be >= 0")
+            raise TypeError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -55,4 +55,4 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             string += "\n".join("#" * self.__width
                                 for j in range(self.__height))
-            return string
+        return string
