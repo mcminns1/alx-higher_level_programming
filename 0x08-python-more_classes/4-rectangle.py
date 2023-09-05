@@ -7,7 +7,7 @@ Defines a class Rectangle
 class Rectangle:
     """Representation of a rectangle"""
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """Initialize the rectangle"""
         self.width = width
         self.height = height
 
@@ -22,7 +22,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
-            raise TypeError("width must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -45,9 +45,9 @@ class Rectangle:
 
     def perimeter(self):
         """returns the perimeter of the rectangle"""
-        if self.__width == 0 self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return (self.__width * 2) + (self.__height *)
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
         """returns printable string representation of the rectangle"""
@@ -55,8 +55,8 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             string += "\n".join("#" * self.__width
                                 for j in range(self.__height))
-            return string
-    
+        return string
+
     def __repr__(self):
         """returns a string representation of the rectangle for reproduction"""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width. self.__height)
